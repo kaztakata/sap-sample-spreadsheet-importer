@@ -6,13 +6,13 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@sap/cds": "^7",
+    "@sap/cds": "^8",
     "express": "^4",
-    "ui5-cc-spreadsheetimporter": "^0.33.1"
+    "ui5-cc-spreadsheetimporter": "^1.2.0"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
-    "cds-plugin-ui5": "^0.6.13"
+    "cds-plugin-ui5": "^0.9.8"
   },
   "scripts": {
     "start": "cds-serve",

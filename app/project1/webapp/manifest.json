@@ -1,179 +1,179 @@
 {
-  "_version": "1.59.0",
-  "sap.app": {
-    "id": "project1",
-    "type": "application",
-    "i18n": "i18n/i18n.properties",
-    "applicationVersion": {
-      "version": "0.0.1"
-    },
-    "title": "{{appTitle}}",
-    "description": "{{appDescription}}",
-    "resources": "resources.json",
-    "sourceTemplate": {
-      "id": "@sap/generator-fiori:lrop",
-      "version": "1.12.5",
-      "toolsId": "2af52daf-8dec-48aa-95cd-e7fc2c7382c9"
-    },
-    "dataSources": {
-      "mainService": {
-        "uri": "/odata/v4/user/",
-        "type": "OData",
-        "settings": {
-          "annotations": [],
-          "odataVersion": "4.0"
-        }
-      }
-    }
-  },
-  "sap.ui": {
-    "technology": "UI5",
-    "icons": {
-      "icon": "",
-      "favIcon": "",
-      "phone": "",
-      "phone@2": "",
-      "tablet": "",
-      "tablet@2": ""
-    },
-    "deviceTypes": {
-      "desktop": true,
-      "tablet": true,
-      "phone": true
-    }
-  },
-  "sap.ui5": {
-    "flexEnabled": true,
-    "dependencies": {
-      "minUI5Version": "1.121.2",
-      "libs": {
-        "sap.m": {},
-        "sap.ui.core": {},
-        "sap.ushell": {},
-        "sap.fe.templates": {},
-        "sap.f": {}
-      }
-    },
-    "contentDensities": {
-      "compact": true,
-      "cozy": true
-    },
-    "models": {
-      "i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "settings": {
-          "bundleName": "project1.i18n.i18n"
-        }
-      },
-      "": {
-        "dataSource": "mainService",
-        "preload": true,
-        "settings": {
-          "synchronizationMode": "None",
-          "operationMode": "Server",
-          "autoExpandSelect": true,
-          "earlyRequests": true
-        }
-      },
-      "@i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "uri": "i18n/i18n.properties"
-      }
-    },
-    "resources": {
-      "css": []
-    },
-    "componentUsages": {
-      "spreadsheetImporter": {
-        "name": "cc.spreadsheetimporter.v0_33_1"
-      }
-    },
-    "resourceRoots": {
-      "cc.spreadsheetimporter.v0_33_1": "./thirdparty/customControl/spreadsheetImporter/v0_33_1"
-    },
-    "routing": {
-      "config": {
-        "flexibleColumnLayout": {
-          "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
-          "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+    "_version": "1.59.0",
+    "sap.app": {
+        "id": "project1",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
         },
-        "routerClass": "sap.f.routing.Router"
-      },
-      "routes": [
-        {
-          "pattern": ":?query:",
-          "name": "TemplateRequestsList",
-          "target": [
-            "TemplateRequestsList"
-          ]
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:lrop",
+            "version": "1.12.5",
+            "toolsId": "2af52daf-8dec-48aa-95cd-e7fc2c7382c9"
         },
-        {
-          "pattern": "TemplateRequests({key}):?query:",
-          "name": "TemplateRequestsObjectPage",
-          "target": [
-            "TemplateRequestsList",
-            "TemplateRequestsObjectPage"
-          ]
-        }
-      ],
-      "targets": {
-        "TemplateRequestsList": {
-          "type": "Component",
-          "id": "TemplateRequestsList",
-          "name": "sap.fe.templates.ListReport",
-          "options": {
-            "settings": {
-              "contextPath": "/TemplateRequests",
-              "variantManagement": "Page",
-              "navigation": {
-                "TemplateRequests": {
-                  "detail": {
-                    "route": "TemplateRequestsObjectPage"
-                  }
+        "dataSources": {
+            "mainService": {
+                "uri": "/odata/v4/user/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "odataVersion": "4.0"
                 }
-              },
-              "initialLoad": "Enabled",
-              "controlConfiguration": {
-                "@com.sap.vocabularies.UI.v1.LineItem": {
-                  "actions": {
-                    "uploadButton": {
-                      "id": "spreadsheetUploadButton",
-                      "press": "project1.ext.controller.Upload.upload",
-                      "requiresSelection": false,
-                      "text": "Upload"
-                    }
-                  }
-                }
-              }
             }
-          },
-          "controlAggregation": "beginColumnPages",
-          "contextPattern": ""
-        },
-        "TemplateRequestsObjectPage": {
-          "type": "Component",
-          "id": "TemplateRequestsObjectPage",
-          "name": "sap.fe.templates.ObjectPage",
-          "options": {
-            "settings": {
-              "editableHeaderContent": false,
-              "contextPath": "/TemplateRequests"
-            }
-          },
-          "controlAggregation": "midColumnPages",
-          "contextPattern": "/TemplateRequests({key})"
         }
-      }
     },
-    "rootView": {
-      "viewName": "sap.fe.templates.RootContainer.view.Fcl",
-      "type": "XML",
-      "async": true,
-      "id": "appRootView"
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.120.19",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ushell": {},
+                "sap.fe.templates": {},
+                "sap.f": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "project1.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            }
+        },
+        "resources": {
+            "css": []
+        },
+        "componentUsages": {
+            "spreadsheetImporter": {
+                "name": "cc.spreadsheetimporter.v1_2_0"
+            }
+        },
+        "resourceRoots": {
+            "cc.spreadsheetimporter.v1_2_0": "./thirdparty/customcontrol/spreadsheetimporter/v1_2_0"
+        },
+        "routing": {
+            "config": {
+                "flexibleColumnLayout": {
+                    "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
+                    "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+                },
+                "routerClass": "sap.f.routing.Router"
+            },
+            "routes": [
+                {
+                    "pattern": ":?query:",
+                    "name": "TemplateRequestsList",
+                    "target": [
+                        "TemplateRequestsList"
+                    ]
+                },
+                {
+                    "pattern": "TemplateRequests({key}):?query:",
+                    "name": "TemplateRequestsObjectPage",
+                    "target": [
+                        "TemplateRequestsList",
+                        "TemplateRequestsObjectPage"
+                    ]
+                }
+            ],
+            "targets": {
+                "TemplateRequestsList": {
+                    "type": "Component",
+                    "id": "TemplateRequestsList",
+                    "name": "sap.fe.templates.ListReport",
+                    "options": {
+                        "settings": {
+                            "contextPath": "/TemplateRequests",
+                            "variantManagement": "Page",
+                            "navigation": {
+                                "TemplateRequests": {
+                                    "detail": {
+                                        "route": "TemplateRequestsObjectPage"
+                                    }
+                                }
+                            },
+                            "initialLoad": "Enabled",
+                            "controlConfiguration": {
+                                "@com.sap.vocabularies.UI.v1.LineItem": {
+                                    "actions": {
+                                        "uploadButton": {
+                                            "id": "spreadsheetUploadButton",
+                                            "press": "project1.ext.controller.Upload.upload",
+                                            "requiresSelection": false,
+                                            "text": "Upload"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "controlAggregation": "beginColumnPages",
+                    "contextPattern": ""
+                },
+                "TemplateRequestsObjectPage": {
+                    "type": "Component",
+                    "id": "TemplateRequestsObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "contextPath": "/TemplateRequests"
+                        }
+                    },
+                    "controlAggregation": "midColumnPages",
+                    "contextPattern": "/TemplateRequests({key})"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "sap.fe.templates.RootContainer.view.Fcl",
+            "type": "XML",
+            "async": true,
+            "id": "appRootView"
+        }
+    },
+    "sap.fiori": {
+        "registrationIds": [],
+        "archeType": "transactional"
     }
-  },
-  "sap.fiori": {
-    "registrationIds": [],
-    "archeType": "transactional"
-  }
 }
